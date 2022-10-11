@@ -10,6 +10,64 @@
   justify-content: center;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+  z-index: 1;
+}
+header::after {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid white;
+  -webkit-animation: border-grow 2s ease;
+          animation: border-grow 2s ease;
+}
+@-webkit-keyframes border-grow {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes border-grow {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+header button {
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  background-color: unset;
+  border: unset;
+  color: inherit;
+  font-size: 32px;
+}
+header button:last-child {
+  margin-right: 50px;
+}
+
+body {
+  background-color: #ef78b3;
+  color: white;
+}
+
 .hamburger-menu {
   height: 100px;
   display: flex;
